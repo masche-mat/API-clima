@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba con Fetch</title>
+    <link href="estilo.css" rel="stylesheet" />
+    <!-- Pequeña hoja de estilos para dar formato-->
+    <!--<script>
+        const url="http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=54c1fcbe879ea4c22e3b12712f5c124b"; 
+        //dirección de la API. Puede ser la ruta a un archivo json. CREA LA TUYA.
+       
+        fetch(url) //Realizamos el fetch que devolverá una promesa
+            .then( respuesta=>respuesta.json()) //Obtenemos una promesa que trataremos como json
+            .then(datos=> { //obtenemos una nueva promesa, pero los datos ya están como json.
+                document.getElementById('ciudad').innerHTML= datos.name + ", " + datos.sys.country; //escribo los datos del país
+                document.getElementById('temp').innerHTML=(datos.main.temp -273.15).toFixed(1) + "º";//escribo la temperatura. la convierto de kelvin a celsius
+                document.getElementById('imagen').src="http://openweathermap.org/img/wn/"+ datos.weather[0].icon +".png" //imagen
+            })
+            .catch( error => alert("Hubo un error: " + error));
+    </script>-->
+  </head>
+  <body>
+    <!--<div class="api">
+      <div class="container">
+        🌞 This demo needs an OpenWeather API key to work.
+        <a target="_blank" href="https://home.openweathermap.org/users/sign_up"
+          >Get yours here for free!</a
+        >
+      </div>
+    </div>-->
+    <section class="top-banner">
+      <div class="container">
+        <h1 class="heading">Consulta el estado del tiempo</h1>
+        <form>
+          <input type="text" placeholder="Buscar la ciudad.." autofocus />
+          <button type="submit">BUSCAR</button>
+          <span class="msg"></span
+          ><!--mensaje si tiene error en la consulta-->
+        </form>
+      </div>
+    </section>
+    <section class="ajax-section">
+      <!--aqui se despliega la info delestado del tiempo-->
+      <div class="container">
+        <ul class="cities"></ul>
+      </div>
+    </section>
+    <footer class="page-footer"></footer>
+
+    <!--<div>
+        <span id="ciudad"></span><br>
+        <span id="temp"> </span>
+        <img id="imagen" src="">
+    </div>-->
+
+    <script src="clima.js"></script>
+  </body>
+</html>
