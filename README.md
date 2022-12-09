@@ -1,2 +1,2 @@
 # API-clima
-app web consultar clima
+app web para consultar clima
